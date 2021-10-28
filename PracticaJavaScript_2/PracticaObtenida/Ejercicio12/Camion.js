@@ -1,15 +1,13 @@
-class Vehicle{
+class Vehiculo{
   constructor(wheels,topSpeed){
     this.wheels = wheels;
     this.topSpeed = topSpeed;
   }
 }
-// const tricycle = new Vehicle( 3, 20 );
-class Camion extends Vehicle{
+
+class Camion extends Vehiculo{
   constructor(wheels,topSpeed,chargeCapacity){
     super(wheels, topSpeed);
-    // this.topSpeed = Vehicle.topSpeed;
-    // this.wheels = Vehicle.wheels;
     this.chargeCapacity = chargeCapacity;
   }
 }

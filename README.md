@@ -1,2 +1,3 @@
 # CursoJS_Carrizo
-hola
+
+Hola este es un archivo de texto

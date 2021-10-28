@@ -8,6 +8,8 @@ class Vehicle {
 class Camion extends Vehicle {
   constructor( wheels, topSpeed, chargeCapacity ) {
     super(wheels, topSpeed);
+    // this.topSpeed = Vehicle.topSpeed;
+    // this.wheels = Vehicle.wheels;
     this.chargeCapacity = chargeCapacity;
   }
 }

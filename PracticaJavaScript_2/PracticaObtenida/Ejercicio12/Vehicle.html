@@ -1,28 +1,37 @@
 <html>
 <head>
-  <script type="text/javascript" src="Vehicle.js" >
-    // class Vehicle {
-    //   constructor( wheels, topSpeed ) {
-    //     this.wheels = wheels;
-    //     this.topSpeed = topSpeed;
-    //   }
-    // }
+  <script type="text/javascript">
+    class Vehicle {
+      constructor( wheels, topSpeed ) {
+        this.wheels = wheels;
+        this.topSpeed = topSpeed;
+      }
+    }
+    // const tricycle = new Vehicle( 3, 20 );
+    class Camion extends Vehicle {
+      constructor( wheels, topSpeed, chargeCapacity ) {
+        super(wheels, topSpeed);
+        // this.topSpeed = Vehicle.topSpeed;
+        // this.wheels = Vehicle.wheels;
+        this.chargeCapacity = chargeCapacity;
+      }
+    }
   </script>
 </head>
 <body>
 <h2>El vehiculo Triciclo tiene</h2>
 <script type="text/javascript">
   const tricycle = new Vehicle( 3, 20 );
-  document.write ("<br> Ruedas: " + tricycle.wheels)
-  document.write ("<br> Velocidad Max: " + tricycle.topSpeed)
+  document.write ("<br> Ruedas: " + tricycle.wheels);
+  document.write ("<br> Velocidad Max: " + tricycle.topSpeed);
 </script>
 <hr>
-<h2>Camion</h2>
+<h2>El vehiculo Camion tiene</h2>
 <script type="text/javascript">
   const camion = new Camion( 3, 20, 3000 );
-  document.write ("<br> Ruedas: " + camion.wheels)
-  document.write ("<br> Velocidad Max: " + camion.topSpeed)
-  document.write ("<br> Capacidad: " + camion.chargeCapacity)
+  document.write ("<br> Ruedas: " + camion.wheels);
+  document.write ("<br> Velocidad Max: " + camion.topSpeed);
+  document.write ("<br> Capacidad: " + camion.chargeCapacity);
 </script>
 </body>
 </html>

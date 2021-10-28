@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title></title>
+    <script src="" ></script>
+  </head>
+  <body>
+    <h1>Herencia</h1>
+    <script type="text/javascript">
+      function Animal (nombre) {
+        this.nombre = nombre;
+      }
+      Animal.prototype.hablar = function () {
+        console.log(this.nombre + 'hace un ruido.');
+      }
+
+      class Perro extends Animal {
+        hablar() {
+          super.hablar();
+          console.log(this.nombre + ' ladra.');
+        }
+      }
+      var p = new Perro('Mitzie');
+      p.hablar();
+    </script>
+    <hr>
+  </body>
+</html>

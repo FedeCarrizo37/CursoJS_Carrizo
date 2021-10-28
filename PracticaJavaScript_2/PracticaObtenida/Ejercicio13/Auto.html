@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Clase auto - Ejercicio 13</title>
+    <script src="Auto.js" ></script>
+  </head>
+  <body>
+    <h2>Detalle del Auto:</h2>
+    <script type="text/javascript">
+      class Car {
+        constructor( make, model, year, color ) {
+          this.make = make;
+          this.model = model;
+          this.year = year;
+          this.color = color;
+        }
+        setColor( color ) {
+          this.color = color;
+        }
+      }
+      let subaru = new Car( 'Subaru', 'Outback', 2005, 'Grey' );
+      subaru.setColor( 'Red' );
+      document.write("Marca:" + subaru.make + "<br>");
+      document.write("Modelo:" + subaru.model + "<br>");
+      document.write("Año:" + subaru.year + "<br>");
+      document.write("Color:" + subaru.color + "<br>");
+    </script>
+  </body>
+</html>

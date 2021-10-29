@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Clases y Herencia - Operaciones con metodos</title>
+    <script src="Cuenta.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>Clase Cuentas - Caja de Ahorro</h1>
+    <script type="text/javascript">
+      let ca = new CajaAhorro( '524398/2', 125.50, 2.3 );
+      document.write("<br>Saldo original:");
+      document.write(ca);
+      ca.acreditar(33);
+      document.write("<hr>Acredito $33");
+      document.write(ca);
+      ca.debitar(58.5);
+      document.write("<hr>Debito $58.5 y puedo:");
+      document.write(ca);
+      ca.debitar(100.5);
+      document.write("<hr>Debito $100.5 NO me deja. Queda el mismo saldo:");
+      document.write(ca);
+    </script>
+  </body>
+</html>

@@ -2,13 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="iso-8859-1">
-    <title>Clases y Herencia - Overrride</title>
+    <title>Clases y Herencia - Operaciones con metodos</title>
     <script src="Cuenta.js" type="text/javascript"></script>
   </head>
   <body>
     <h1>Clase Cuentas</h1>
     <script type="text/javascript">
-
+      let cta = new Cuenta(5043824, 100);
+      document.write("<br>Saldo Original:" + cta);
+      cta.acreditar(50);
+      document.write("<hr>Acredito $50");
+      document.write(cta);
+      cta.debitar(45.38);
+      document.write("<hr>Debito $45.38");
+      document.write(cta);
     </script>
   </body>
 </html>

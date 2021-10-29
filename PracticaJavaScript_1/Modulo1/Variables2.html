@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Variables 2</title>
+    <script type="text/javascript">
+      var myVar = "global"; // Declare a global variable
+      function checkscope( ) {
+        var myVar = "local"; // Declare a local variable
+        document.write(myVar);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Variable local o global:</p>
+    <script type="text/javascript">
+      checkscope();
+    </script>
+  </body>
+</html>

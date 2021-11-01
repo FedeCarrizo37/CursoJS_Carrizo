@@ -4,13 +4,15 @@ class Cuenta{
     this.saldo = saldo;
   }
   acreditar(monto) {
+    document.write("<br><u style='color:green;'>Acredito +$" + monto + "</u>");
     this.saldo += monto;
   }
   debitar(monto) {
+    document.write("<br><u style='color:red;'>Debito -$" + monto + "</u>");
     this.saldo -= monto;
   }
   toString(){
-    return "<br>Cuenta #" + this.numero + "<br>Saldo= $" + this.saldo;
+    return "<br><font style='color:blue;'>Cuenta #" + this.numero + "<br>Saldo= $" + this.saldo + "</font>";
   }
 }
 class CajaAhorro extends Cuenta {
@@ -19,10 +21,14 @@ class CajaAhorro extends Cuenta {
     this.interes = interes;
   }
   debitar(monto){
-    if(monto <= this.saldo)
+    if(monto <= this.saldo){
       super.debitar(monto);
+    }
+    else{
+      document.write("<br><u style='color:red;'> Saldo Insuficiente</u>");
+    }
   }
   toString(){
-    return super.toString() + "<br>Interes= " + this.interes + "%<hr>";
+    return super.toString() + "<br><font style='color:black;'>Interes= " + this.interes + "%</font><hr>";
   }
 }

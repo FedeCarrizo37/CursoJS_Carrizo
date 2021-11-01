@@ -11,14 +11,14 @@
       let ca = new CajaAhorro( '524398/2', 125.50, 2.3 );
       document.write("<br>Saldo original:");
       document.write(ca);
+      document.write("<hr>Llamo a Metodo para sumar $33");
       ca.acreditar(33);
-      document.write("<hr>Acredito $33");
       document.write(ca);
+      document.write("<hr>Llamo a Metodo para restar $58.5 (tiene saldo)");
       ca.debitar(58.5);
-      document.write("<hr>Debito $58.5 y puedo:");
       document.write(ca);
+      document.write("<hr>Llamo a Metodo para restar $100.5 (no tiene saldo):");
       ca.debitar(100.5);
-      document.write("<hr>Debito $100.5 NO me deja. Queda el mismo saldo:");
       document.write(ca);
     </script>
   </body>

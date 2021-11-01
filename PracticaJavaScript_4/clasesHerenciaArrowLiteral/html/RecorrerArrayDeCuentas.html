@@ -19,5 +19,59 @@
         document.write(array_cuentas[i].toString());
       });
     </script>
+    <h1>Clase Cuentas - Array Filtrado (Punto 11)</h1>
+    A Continuación, mostrar todas las cuentas que tengan un saldo menor que $2500
+    utilizando filter con una función array, luego foreach on the fly para mostrarlos.
+    <br>
+    <script type="text/javascript">
+      document.write("<u>Cuentas que cumplen la condicion:</u><br>");
+      array_cuentas.filter(cuentas_filtradas=>cuentas_filtradas.saldo<2500).forEach((item, i) => {
+        document.write(`${item}`);
+      });
+    </script>
+    <h1>Clase Cuentas - Array Filtrado (Punto 12)</h1>
+    Mostrar todas cuentas que al restarle 100 superen los 2400.
+    <script type="text/javascript">
+      document.write("<hr>Primero aplico debito -$100 a todas<br>");
+      for (var i = 0; i < array_cuentas.length; i++) {
+        array_cuentas[i].debitar(100);
+        document.write(array_cuentas[i].toString());
+      }
+      document.write("<u>Cuentas que cumplen la condicion:</u><br>");
+      array_cuentas.filter(cuentas_filtradas=>cuentas_filtradas.saldo>2400).forEach((item, i) => {
+        document.write(`${item}`);
+      });
+    </script>
+    <h1>Clase Cuentas - Array Filtrado (Punto 13)</h1>
+    Mostar todas las cuentas luego de debitarle 500$ a cada cuenta.
+    <script type="text/javascript">
+      for (var i = 0; i < array_cuentas.length; i++) {
+        array_cuentas[i].debitar(500);
+        document.write(array_cuentas[i].toString());
+      }
+    </script>
+    <h1>Clase Cuentas - Array Filtrado (Punto 14)</h1>
+    Sumarle 5000 a todos las cuentas que a esta altura tengan
+    saldo menor que 1500 y mostrarlas a continuación.
+    <script type="text/javascript">
+      for (var i = 0; i < array_cuentas.length; i++) {
+        array_cuentas[i].acreditar(5000);
+        document.write(array_cuentas[i].toString());
+      }
+      document.write("<u>Cuentas que cumplen la condicion:</u><br>");
+      array_cuentas.filter(cuentas_filtradas=>cuentas_filtradas.saldo<1500).forEach((item, i) => {
+        document.write(`${item}`);
+      });
+    </script>
+    <h1>Clase Cuentas - Array Filtrado (Punto 15)</h1>
+    Mostrar todas las cuentas y la suma total de todos los saldos.
+    <script type="text/javascript">
+      var sumasaldos = 0;
+      for (var i = 0; i < array_cuentas.length; i++) {
+        sumasaldos = sumasaldos + array_cuentas[i].saldo;
+        document.write(array_cuentas[i].toString());
+      }
+      document.write(`<br/>La suma de todos los saldos mayores que $1000 = $${sumasaldos}`);
+    </script>
   </body>
 </html>

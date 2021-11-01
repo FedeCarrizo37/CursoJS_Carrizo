@@ -19,8 +19,7 @@ class Cuenta{
     else if (this.saldo < 0) {
       colorSaldo = "red";
     }
-    var fraseSaldo = "<br><font style='color:" + colorSaldo + ";'>Saldo= $" + this.saldo + "</font>";
-    return "<hr><font style='color:blue;'>Cuenta #" + this.numero + "</font>" + fraseSaldo;
+    return `<hr><font style='color:blue;'>Cuenta # ${this.numero}</font><br><font style='color:` + colorSaldo + `;'>Saldo= $${this.saldo}</font>`;
   }
 }
 class CajaAhorro extends Cuenta {
@@ -37,7 +36,7 @@ class CajaAhorro extends Cuenta {
     }
   }
   toString(){
-    return super.toString() + "<br><font style='color:black;'>Interes= " + this.interes + "%</font><hr>";
+    return super.toString() + `<br><u style='color:black;'>Interes= ${this.interes}%</u><hr>`;
   }
 }
 class CuentaCorriente extends Cuenta {
@@ -54,6 +53,6 @@ class CuentaCorriente extends Cuenta {
     }
   }
   toString(){
-    return super.toString() + "<br><font style='color:black;'>Descubierto= $" + this.descubierto + "</font><hr>";
+    return super.toString() + `<br><u style='color:black;'>Descubierto= $${this.descubierto}</u><hr>`;
   }
 }

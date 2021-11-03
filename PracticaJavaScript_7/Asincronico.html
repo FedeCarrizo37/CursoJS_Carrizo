@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Cronos</title>
+  </head>
+  <body>
+    <h1>Event Loops</h1>
+    Hola
+    <script type="text/javascript">
+      setTimeout( () => {
+        for( let i = 0; i < 2000000000; i++ ) {}
+        document.write( '<hr>Funcion 1 ok' );
+      }, 10 );
+      setTimeout( () => {
+        document.write( '<hr>Funcion 2 ok' )
+      }, 0 );
+    </script>
+  </body>
+</html>

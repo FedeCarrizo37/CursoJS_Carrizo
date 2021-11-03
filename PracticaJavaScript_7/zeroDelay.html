@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Cronos</title>
+  </head>
+  <body>
+    <h1>Zero Delay Functions</h1>
+    <script type="text/javascript">
+      setTimeout( () => {
+        document.write( '<br>Funcion 1 ok' );
+        console.log( 'Funcion 1 ok' );
+      }, 0 );
+      setTimeout( () => {
+        document.write( '<br>Funcion 2 ok' );
+        console.log( 'Funcion 2 ok' );
+      }, 0 );
+      document.write( '<br>Funcion 3 ok' );
+      console.log( 'Funcion 3 ok' );
+    </script>
+  </body>
+</html>

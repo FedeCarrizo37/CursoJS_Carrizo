@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Figuras</title>
+    <script src="Figuras.js" type="text/javascript"></script>
+    <style media="screen">
+      body{
+        font-family: Arial;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Figuras Geometricas</h1>
+    <h2>Puntos 1, 2 y 3</h2>
+    <script type="text/javascript">
+      let array_figuras = new Array(
+        new Cuadrado("Cuadrado1",5),
+        new Cuadrado("Cuadrado2",7),
+        new Rectangulo("Rectangulo1",6,8),
+        new Rectangulo("Rectangulo2",9,7),
+        new Circulo("Circulo1",2),
+        new Circulo("Circulo2",3),
+        new Triangulo("Triangulo1",2,3,4),
+        new Triangulo("Triangulo2",3,4,5)
+        );
+      array_figuras.forEach((item, i) => {
+        document.write(array_figuras[i]);
+        document.write(array_figuras[i].calcular_perimetro());
+        document.write(array_figuras[i].calcular_area());
+      });
+    </script>
+    <h2>Punto 3</h2>
+    Filtrar las figuras que tengan una superficie mayor que 100
+    <br>
+    <script type="text/javascript">
+      document.write("<u>Figuras que cumplen la condicion:</u><br>");
+      array_figuras.filter(figuras_filtradas=>figuras_filtradas.saldo<2500).forEach((item, i) => {
+        document.write(`${item}`);
+      });
+    </script>
+  </body>
+</html>

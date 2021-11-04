@@ -2,18 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="iso-8859-1">
-    <title>Cronos</title>
+    <title>PracticaJavaScript_7</title>
   </head>
   <body>
-    <h1>Event Loops</h1>
-    Hola
+    <h1>Asincronico</h1>
     <script type="text/javascript">
       setTimeout( () => {
         for( let i = 0; i < 2000000000; i++ ) {}
         document.write( '<hr>Funcion 1 ok' );
+        console.log( '<hr>Funcion 1 ok' );
       }, 10 );
       setTimeout( () => {
-        document.write( '<hr>Funcion 2 ok' )
+        document.write( '<hr>Funcion 2 ok' );
+        console.log( '<hr>Funcion 2 ok' );
       }, 0 );
     </script>
   </body>

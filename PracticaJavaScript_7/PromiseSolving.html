@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>PracticaJavaScript_7</title>
+  </head>
+  <body>
+    <h1>PromiseSolving</h1>
+    <script type="text/javascript">
+      const myPromise = new Promise( ( resolve, reject ) => {
+        console.log( 'Promise1: comienzo tarea asincronica!' );
+        setTimeout( () => { resolve( 'Promise1: hecho! (dsp de 5 seg)' ); }, 5000 );
+      } );
+      myPromise.then( value => console.log( value ) );
+
+      const myPromise2 = new Promise( ( resolve, reject ) => {
+        reject( new Error ('Error en Promise2 fue resuelto!') );
+      } );
+      myPromise2.catch( err => console.log( `Detalle Error= ${err}` ) );
+
+      // Resolve the promise with a value
+      const myPromise3 = new Promise( ( resolve, reject ) => {
+        resolve( 'Promise3 was resolved!' );
+      } );
+      myPromise3.finally( value => {
+        console.log( 'Promise3 Finally! (se ejecuta simepre despues de resolve o reject)' );
+      } );
+      // Expected output:
+      // Finally!
+    </script>
+  </body>
+</html>

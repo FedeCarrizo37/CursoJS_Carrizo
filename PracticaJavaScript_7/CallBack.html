@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>PracticaJavaScript_7</title>
+  </head>
+  <body>
+    <h1>CallBack</h1>
+    <p>Ver consola</p>
+    <script type="text/javascript">
+      function higherOrder( data, cb ) {
+        if ( !cb || !( typeof cb === 'function' ) ) {
+          throw new Error( `Invalid callback. Please provide a function.` );
+        }
+        console.log( `Data: ` + data );
+        setTimeout( cb, 5000 ); //le puse 5 segundos aproposito
+      }
+
+      console.log( `Llamo a funcion forzando un error:` )
+      try {
+        higherOrder( 1, null );
+      } catch ( err ) {
+        console.log( `Error contemplado: ${err.message}` );
+      }
+
+      console.log( `Llamo a funcion sin llamada a error:` )
+      higherOrder( 1, () => {
+        console.log( `Callback Called! (demora 5 seg)` )
+      } );
+    </script>
+  </body>
+</html>

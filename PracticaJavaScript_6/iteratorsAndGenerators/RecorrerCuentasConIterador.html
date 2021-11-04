@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Clases y Herencia - Array</title>
+    <script src="Cuenta.js" type="text/javascript"></script>
+    <script src="Funciones.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>Clase Cuentas - Array de Cuentas</h1>
+    <script type="text/javascript">
+      let array_cuentas = new Array(new CajaAhorro( '543210/2', 100, 10 ),
+                              new CuentaCorriente( '50001/9', 2000, 1000 ),
+                              new CajaAhorro( '598765/3', 150, 2.3 ),
+                              new CuentaCorriente( '50002/8', 2500, 3000 ),
+                              new CuentaCorriente( '50003/7', 2700, 2500 ));
+      let it_cuentas = createIterator( array_cuentas );
+      console.log( it_cuentas.next() );
+      console.log( it_cuentas.next() );
+      console.log( it_cuentas.next() );
+      console.log( it_cuentas.next() );
+      console.log( it_cuentas.next() );
+    </script>
+  </body>
+</html>

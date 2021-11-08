@@ -2,14 +2,11 @@ class Figura{
   constructor(nombre) {
     this.nombre = nombre;
   }
-  perimetro(perimetro) {
-    return `<br>Perimetro de ${this.nombre} = ${perimetro}`;
-  }
-  area(area) {
-    return `<br>Area de ${this.nombre} = ${area}`;
-  }
+
   toString() {
-    return `<hr><font style='font-weight:bold;'>Figura ${this.nombre}</font>`;
+    return `<hr><font style='font-weight:bold;'>Figura ${this.nombre}</font>
+            <br>Perimetro= ${this.calcular_perimetro()}
+            <br>Superficie= ${this.calcular_area()}`;
   }
 }
 
@@ -19,10 +16,10 @@ class Cuadrado extends Figura{
     this.lado = lado;
   }
   calcular_perimetro(){
-    return super.perimetro(this.lado * 4);
+    return (this.lado * 4);
   }
   calcular_area(){
-    return super.area(this.lado * this.lado);
+    return (this.lado * this.lado);
   }
   toString() {
     return super.toString() + `<br>Lados = ${this.lado}`;
@@ -36,10 +33,10 @@ class Rectangulo extends Figura{
     this.lado2 = lado2;
   }
   calcular_perimetro(){
-    return super.perimetro((this.lado1 * 2) + (this.lado2 * 2));
+    return ((this.lado1 * 2) + (this.lado2 * 2));
   }
   calcular_area(){
-    return super.area(this.lado1 * this.lado2);
+    return (this.lado1 * this.lado2);
   }
   toString() {
     return super.toString() + `<br>Lado1 = ${this.lado1} <br>Lado2 = ${this.lado2}`;
@@ -52,10 +49,10 @@ class Circulo extends Figura{
     this.radio = radio;
   }
   calcular_perimetro(){
-    return super.perimetro(2 * Math.PI * this.radio);
+    return (2 * Math.PI * this.radio);
   }
   calcular_area(){
-    return super.area(Math.PI * (Math.pow(this.radio,2)));
+    return (Math.PI * (Math.pow(this.radio,2)));
   }
   toString() {
     return super.toString() + `<br>Radio = ${this.radio}`;
@@ -70,10 +67,10 @@ class Triangulo extends Figura{
     this.hipotenusa = hipotenusa;
   }
   calcular_perimetro(){
-    return super.perimetro(this.cateto1 + this.cateto2 + this.hipotenusa);
+    return (this.cateto1 + this.cateto2 + this.hipotenusa);
   }
   calcular_area(){
-    return super.area((this.cateto1 * this.cateto2)/2);
+    return ((this.cateto1 * this.cateto2)/2);
   }
   toString() {
     return super.toString() + `<br>Cateto1 = ${this.cateto1}<br>Cateto2 = ${this.cateto2}<br>Hipotenusa = ${this.hipotenusa}`;

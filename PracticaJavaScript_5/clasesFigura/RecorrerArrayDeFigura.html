@@ -15,29 +15,73 @@
     <h2>Puntos 1, 2 y 3</h2>
     <script type="text/javascript">
       let array_figuras = new Array(
-        new Cuadrado("Cuadrado1",5),
-        new Cuadrado("Cuadrado2",7),
-        new Rectangulo("Rectangulo1",6,8),
+        new Cuadrado("Cuadrado1",18),
+        new Cuadrado("Cuadrado2",22),
+        new Rectangulo("Rectangulo1",50,25),
         new Rectangulo("Rectangulo2",9,7),
-        new Circulo("Circulo1",2),
+        new Circulo("Circulo1",23),
         new Circulo("Circulo2",3),
-        new Triangulo("Triangulo1",2,3,4),
-        new Triangulo("Triangulo2",3,4,5)
+        new Triangulo("Triangulo1",70,60,50),
+        new Triangulo("Triangulo2",2,3,4)
         );
       array_figuras.forEach((item, i) => {
-        document.write(array_figuras[i]);
-        document.write(array_figuras[i].calcular_perimetro());
-        document.write(array_figuras[i].calcular_area());
+        document.write(array_figuras[i].toString());
       });
     </script>
-    <h2>Punto 3</h2>
+    <h2>Punto 4</h2>
     Filtrar las figuras que tengan una superficie mayor que 100
     <br>
     <script type="text/javascript">
       document.write("<u>Figuras que cumplen la condicion:</u><br>");
-      // array_figuras.filter(figuras_filtradas=>figuras_filtradas.saldo<2500).forEach((item, i) => {
-      //   document.write(`${item}`);
-      // });
+      array_figuras.filter(item=>item.calcular_area() > 100).forEach((item, i) => {
+        document.write(`${item}`);
+      });
+    </script>
+    <h2>Punto 5</h2>
+    Filtrar las figuras que tengan un perimetro menor que 150
+    <br>
+    <script type="text/javascript">
+      document.write("<u>Figuras que cumplen la condicion:</u><br>");
+      array_figuras.filter(item=>item.calcular_perimetro()< 150).forEach((item, i) => {
+        document.write(`${item}`);
+      });
+    </script>
+    <h2>Punto 6</h2>
+    Mostrar la mayor superficie de todas
+    <br>
+    <script type="text/javascript">
+      var mayor_valor = 0;
+      var mayor_posic = 0;
+      array_figuras.forEach((item, i) => {
+        if (item.calcular_area() > mayor_valor){
+          mayor_posic = i;
+          mayor_valor = item.calcular_area();
+        }
+      });
+      document.write(array_figuras[mayor_posic].toString());
+    </script>
+    <h2>Punto 7</h2>
+    Mostrar la menor superficie de todas
+    <br>
+    <script type="text/javascript">
+      var menor_valor = mayor_valor;
+      var menor_posic = 0;
+      array_figuras.forEach((item, i) => {
+        if (item.calcular_area() < menor_valor){
+          menor_posic = i;
+          menor_valor = item.calcular_area();
+        }
+      });
+      document.write(array_figuras[menor_posic].toString());
+    </script>
+    <h2>Punto 8</h2>
+    Mostrar el primer, tercer y quinto elemento del array utilizando Destructuring
+    <br>
+    <script type="text/javascript">
+      let [primerElemento, , tercerElemento, , quintoElemento] = array_figuras;
+      document.write(`<br><h2>Primer Elemento:</h2><br/>${primerElemento}`);
+      document.write(`<br><h2>Tercer Elemento:</h2><br/>${tercerElemento}`);
+      document.write(`<br><h2>Quinto Elemento:</h2><br/>${quintoElemento}`);
     </script>
   </body>
 </html>

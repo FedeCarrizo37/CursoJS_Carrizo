@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Control de Flujo</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var nota = 'A';
+      var linebreak = "<br />";
+      document.write("Nota = " + nota);
+      document.write(linebreak);
+      document.write(linebreak);
+      document.write(linebreak);
+      document.write("Entrando del Switch<br />");
+      switch (nota)
+      {
+        case 'A': document.write("Excelente<br />");
+            break;
+        case 'B': document.write("Muy bien<br />");
+            break;
+        case 'C': document.write("Aprobado<br />");
+            break;
+        case 'D': document.write("Masomenos<br />");
+            break;
+        case 'F': document.write("Malo<br />");
+            break;
+        default: document.write("Nota desconocida<br />")
+      }
+      document.write("Saliendo del Switch");
+    </script>
+  </body>
+</html>

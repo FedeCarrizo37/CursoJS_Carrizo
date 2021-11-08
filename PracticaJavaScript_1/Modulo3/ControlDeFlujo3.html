@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Control de Flujo</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var libro = "Matematicas";
+      var linebreak = "<br />";
+
+      document.write("Libro =" + libro);
+
+      document.write(linebreak);
+      document.write(linebreak);
+      document.write(linebreak);
+
+      if( libro == "Historia" ){
+          document.write("<b>Libro de Historia</b>");
+      }else if( libro == "Matematicas" ){
+          document.write("<b>Libro de Matematicas</b>");
+      }else if( libro == "Economia" ){
+          document.write("<b>Libro de Economia</b>");
+      }else{
+          document.write("<b>Libro desconocido </b>");
+      }
+
+    </script>
+  </body>
+</html>

@@ -8,7 +8,22 @@
   <body>
     <h1>Fibonacci</h1>
     <script type="text/javascript">
-      //hacer fibonacci
+
+      let gen = fibonacci();
+
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+      //con esto reseteo el fibo
+      console.log( gen.next( true ).value );
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+      console.log( gen.next().value );
+
     </script>
   </body>
 </html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>Element DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>Element DOM</h1>
+    <h2>Snippet 3.2: Getting an element by its id</h2>
+    <p>
+      Getting an element by ID is done with the document.getElementById( id ) method. This method takes in a
+      parameter id, which represents the id of the element to look up, and returns an element object. The object that's
+      returned will be the element object that describes the DOM node of the specified id. If no element matches the id
+      provided, the function will return null. An example of the getElementById function is shown in the following snippet:
+    </p>
+    <div id="exampleDiv">Some text here</div>
+    <script type="text/javascript">
+      const elem = document.getElementById( 'exampleDiv' );
+      document.write("Element DOM searched= " + elem.id);
+    </script>
+    <hr>
+    <h2>Snippet 3.3: Getting elements by tag name</h2>
+    <p>
+      Getting an element by tag name is done with the document.getElementsByTagName( name ) method. The
+      function takes in a single argument that represents the HTML tag name to search for. getElementsByTagName
+      returns a live HTMLCollection of elements that match the given tag name. The returned list is live, which means
+      that it updates itself with the DOM tree automatically. There is no need to call the function several times with the
+      same element and arguments. An example of getElementsByTagName is shown in the following snippet:
+    </p>
+    <div id="exampleDiv1">Some text here</div>
+    <div id="exampleDiv2">Some text here</div>
+    <div id="exampleDiv3">Some text here</div>
+    <script type="text/javascript">
+      const elems = document.getElementsByTagName( 'div' );
+      document.write("<br>Element DOM searched= " + elems.length);
+      document.write("<br>(deberia traer solo 3 pero como hay otro div arriba, lo cuenta)");
+    </script>
+    <hr>
+    <h2>Snippet 3.4: Getting elements by class name</h2>
+    <p>
+      An HTMLCollection is an interface that represents a collection (array-like object) of element nodes. It can be
+      iterated over and offers methods and properties for selecting from the list.
+      To get an element by class name, we use the document.getElementsByClassName( name ) method. The
+      function takes in a single argument that represents the HTML class name to search for and returns a live
+      HTMLCollection of elements that match the given classname. An example of getElementsByClassName is
+      shown in the following snippet:
+    </p>
+    <div class="example">Some text here</div>
+    <img class="example"></img>
+    <style class="example"></style>
+    <script type="text/javascript">
+      const elems_2 = document.getElementsByClassName( 'example' );
+      document.write("<br>Element DOM searched ByClassName 'example'= " + elems_2.length);
+      for (i = 0; i < elems_2.length; i++) {
+        document.write("<br>" +  elems_2[i] + "=> Class= " + elems_2[i].className);
+      }
+    </script>
+    <hr>
+    <h2>Snippet 3.5: Getting elements by using the CSS selector</h2>
+    <p>
+      The two functions, querySelector() and querySelectorAll(), are used to get HTML elements by CSS query
+      selector. They both take in a single string parameter that represents a CSS selector string. querySelector will
+      return a single element. querySelectorAll will return a static (non-live) NodeList of the elements that match the
+      query. Multiple query selectors can be passed into the function by creating a comma-separated string that contains
+      each selector. If multiple selectors are passed into the query selector functions, the function will match and return
+      elements that meet any of the selector's requirements. The functionality for querySelector and
+      querySelectorAll is shown in the following snippet:
+    </p>
+    <div id="id1">Some text here</div>
+    <img class="class"></img>
+    <script>
+      const elem_2 = document.querySelector( 'img.class' );
+      const elems_3 = document.querySelectorAll( 'img.class, #id1' );
+      document.write("<br>querySelector= " + elems_3.length);
+      document.write("<br>querySelectorAll[0]= " + elems_3[0]);
+      document.write("<br>querySelectorAll[1]= " + elems_3[1]);
+    </script>
+    <hr>
+    <h2>Snippet 3.6: Returning an HTMLCollection</h2>
+    <p>
+      The getElementsByTagName, getElementsByClassName, querySelector, and querySelectorAll
+      functions are not limited to only the document object; they can also be called on element nodes. If they are called on
+      an element node, the resulting elements collection returned by the function will be limited to only the children of the
+      element, which the function was called on. This is shown in the following example.
+    </p>
+    <p>
+      Example: We get the element object for the div with the id div1 and save it in the elem variable. We then use
+      getElementsByTagName to get other div elements. The function is called on the element object saved in elem, so
+      the search space is limited to child nodes of div1. getElementsByTagName will return an HTMLCollection with
+      the divs div2 and div3 because they are descendants of div1:
+    </p>
+    <div id="div1">
+      <div id="div2">
+        <div id="div3"> Some text here inside div3 </div>
+      </div>
+    </div>
+    <div> Some other text here in unnamed div </div>
+    <script>
+      const elem_3 = document.getElementById( 'div1' );
+      const elems_4 = document.getElementsByTagName( 'div' );
+      document.write("<br>getElementById 'div1'= " + elem_3.id);
+      document.write("<br>getElementsByTagName 'div'= " + elems_4.length);
+      for (i = 0; i < elems_4.length; i++) {
+        document.write("<br>DIV => Id= " + elems_4[i].id + " => Class= " + elems_4[i].className);
+      }
+      document.write("<br>getElementsByTagName trae 10 div porque toma todos los de este html");
+    </script>
+    <hr>
+    <h2>Snippet 3.7: Parent node</h2>
+    <p>
+      The second way to find DOM elements is by navigating the DOM tree through the element relationships. Once we
+      have found a DOM element to work with, we can use several properties to get that element's child, parent, and sibling
+      nodes. We can traverse the DOM tree by going from node to node with the properties parentNode, childNodes,
+      firstChild, lastChild, previousSibling, and nextSibling.
+    </p>
+    <p>
+      The parentNode property returns a node's parent node. The parent node is a node in the DOM tree that the node is
+      a descendent of. The parent node will always exist unless parentNode is called on the document node. Since the
+      document node is at the top of the DOM tree, it has no parent, and the call to parentNode will return null. The DOM
+      tree can be climbed with the parentNode property. An example of parentNode is shown in the following example:
+    </p>
+    <div id="div4">
+      <div id="div5">
+        <div id="div6"> Some text here inside div6</div>
+      </div>
+    </div>
+    <script>
+      const div_nivel3 = document.getElementById( 'div6' );
+      const div_nivel2 = div_nivel3.parentNode;
+      const div_nivel1 = div_nivel2.parentNode;
+      document.write("<br>Variable div_nivel3 guarda elemento padre= " + div_nivel3.id);
+      document.write("<br>Variable div_nivel2 guarda elemento padre de div_nivel3 = " + div_nivel2.id);
+      document.write("<br>Variable div_nivel1 guarda elemento padre de div_nivel2 = " + div_nivel1.id);
+    </script>
+    <hr>
+    <h2>Snippet 3.8: Traversing sibling nodes</h2>
+    <p>
+      The nextSibling and previousSibling properties are to get a node's siblings in the DOM tree.
+      previousSibling will return the previous sibling in the DOM tree (the sibling added to the parent node before the
+      current node) and nextSibling will return the next sibling in the DOM tree (the sibling node added to the parent
+      node after the current node). When DOM trees are drawn, the node's previous sibling is usually shown to the left and
+      the next sibling is usually shown on the right. The DOM tree can be traversed laterally with the nextSibling and
+      previousSibling functions. These properties are shown in the following example:
+    </p>
+    <div id="div7">El div7 tiene dentro:
+      <div id="div8"> Some text here inside div8</div>
+      <div id="div9"> Some text here inside div9</div>
+      <div id="div10"> Some text here inside div10</div>
+    </div>
+    <script>
+      const div9 = document.getElementById('div9');
+      const sibling1 = div9.previousElementSibling;
+      const sibling2 = div9.nextElementSibling;
+      document.write("<br>Variable sibling1 guarda elemento anterior a div9= " + sibling1.id);
+      document.write("<br>Variable sibling2 guarda elemento posterior a div9= " + sibling2.id);
+      document.write("<br>Si bien previousSibling y nextSibling te traen el objeto texto, previousElementSibling y nextElementSibling apuntan a la etiqueta objeto, y la podes referenciar");
+    </script>
+    <hr>
+    <h2>Snippet 3.9: Traversing sibling nodes</h2>
+    <p>
+      The three last properties are for navigating to a node's child node; they are childNodes, firstChild, and
+      lastChild. The childNodes property returns a live NodeList of the child nodes of an element. The
+      firstChild and lastChild properties return the first or last node from the child NodeList respectively. The use
+      of these properties is shown in the following snippet:
+    </p>
+    <div id="div11">El div11 tiene dentro:
+      <div id="div12"> Some text here inside div12</div>
+      <div id="div13"> Some text here inside div13</div>
+      <div id="div14"> Some text here inside div14</div>
+    </div>
+    <script>
+      const div11 = document.getElementById( 'div11' );
+      const child1 = div11.firstElementChild;
+      const child2 = div11.childNodes[1];
+      const child3 = div11.lastElementChild;
+      document.write("<br>Variable child1 guarda primer elemento hijo de div11= " + child1.id);
+      document.write("<br>Variable child2 guarda elemento hijo nº 1 (array[1]) de div11= " + child2.id);
+      document.write("<br>Variable child3 guarda ultimo elemento hijo a div11= " + child3.id);
+      document.write("<br>El orden es como se escriben en el HTML");
+    </script>
+  </body>
+</html>

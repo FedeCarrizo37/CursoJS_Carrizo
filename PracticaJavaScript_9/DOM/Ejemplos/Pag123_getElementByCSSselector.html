@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>
+      Luego dentro de ejemplos crear un archivo con el nombre
+      Pag123_getElementByCSSselector.html agregando el código necesario para poder visualizar
+      los datos de los componentes obtenidos, id, class y texto interno, buscando a través de la
+      consola la forma de mostrar estos datos.
+    </p>
+    <div id="example1" class="example">Hola Juan Carlos</div>
+    <div id="example2" class="example">como estas</div>
+    <div id="example3" class="example">todo bien?</div>
+    <p id="id1" class="cla">Hola espiritu!!!</p>
+    <script>
+      const elem = document.querySelector('p.cla');
+      const elems = document.querySelectorAll('div.example, #id1');
+
+      console.log("Hay " + elems.length + " divs con clase 'example' + elemento id='id1'");
+      for (i = 0; i < elems.length; i++) {
+        console.log("=> Id= " +  elems[i].id + " => Class= " + elems[i].className + " => Contenido= " + elems[i].innerHTML);
+      }
+
+      console.log("Solo el Elemento <p> con class='id1'");
+      console.log("=> Id= " + elem.id + " => Class= " + elem.className + " => Contenido= " + elem.innerHTML);
+
+    </script>
+  </body>
+</html>

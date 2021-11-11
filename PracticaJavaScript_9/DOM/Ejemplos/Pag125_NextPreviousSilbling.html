@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>
+      Luego dentro de ejemplos crear un archivo con el nombre
+      Pag125_NextPreviousSilbling.html agregando el código necesario para poder visualizar los
+      datos de los componentes obtenidos, id y texto interno, buscando a través de la consola la
+      forma de mostrar estos datos, indicando además cuántos hijos tiene cada nodo.
+    </p>
+    <div id="example1" class="example">Hola Juan Carlos</div>
+    <div id="example2" class="example">como estas</div>
+    <div id="example3" class="example">todo bien?</div>
+    <p id="id1" class="cla">Hola espiritu!!!</p>
+    <script>
+      const example_2 = document.getElementById('example2');
+      document.write("<br>Variable example_2 guarda elemento <br>=> Id= " + example_2.id + "<br>=> Class= " + example_2.className + "<br>=> Contenido= " + example_2.innerHTML);
+      const sibling_prev = example_2.previousElementSibling;
+      const sibling_next = example_2.nextElementSibling;
+      document.write("<br>Variable sibling_prev guarda elemento anterior a example2 <br>=> Id= " + sibling_prev.id + "<br>=> Class= " + sibling_prev.className + "<br>=> Contenido= " + sibling_prev.innerHTML);
+      document.write("<br>Variable sibling_next guarda elemento posterior a example2 <br>=> Id= " + sibling_next.id + "<br>=> Class= " + sibling_next.className + "<br>=> Contenido= " + sibling_next.innerHTML);
+      document.write("<br><br>Si bien previousSibling y nextSibling te traen el objeto texto, previousElementSibling y nextElementSibling apuntan a la etiqueta objeto, y la podes referenciar");
+    </script>
+  </body>
+</html>

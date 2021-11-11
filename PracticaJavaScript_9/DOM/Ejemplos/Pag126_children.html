@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>
+      Luego dentro de ejemplos crear un archivo con el nombre Pag126_children.html agregando
+      el código necesario para poder visualizar los datos de los componentes obtenidos, id y texto
+      interno, buscando a través de la consola la forma de mostrar estos datos, indicando además
+      cuántos hijos tiene cada nodo.
+    </p>
+    <div id="example1" class="example">Hola Juan Carlos
+      <div id="example2" class="example">como estas</div>
+      <div id="example3" class="example">bla bla</div>
+      <div id="example4" class="example">bla bla</div>
+      <div id="example5" class="example">todo bien?</div>
+    </div>
+    <div id="example6" class="example">Hola Espiritu
+      <div id="example7" class="example">todo bien!</div>
+      <div id="example8" class="example">bla bla</div>
+    </div>
+
+    <script>
+      const div_padre = document.getElementById( 'example1' );
+      const child_pri = div_padre.firstElementChild;
+      const childx = div_padre.childNodes[3];
+      const child_ult = div_padre.lastElementChild;
+      document.write("<br>Variable div_padre guarda el elemento padre: " + div_padre.id);
+      document.write("<br>Variable child_pri guarda primer elemento hijo de example1= " + child_pri.id);
+      document.write("<br>Variable childx guarda elemento hijo nº 3 (array[3]) de example1= " + childx.id);
+      document.write("<br>Variable child_ult guarda ultimo elemento hijo a example1= " + child_ult.id);
+      document.write("<br>El orden es como se escriben en el HTML");
+    </script>
+  </body>
+</html>

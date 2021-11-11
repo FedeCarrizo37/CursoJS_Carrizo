@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>
+      Luego dentro de ejemplos crear un archivo con el nombre Pag125_parentNode.html
+      agregando el código necesario para poder visualizar los datos de los componentes obtenidos,
+      id y texto interno, buscando a través de la consola la forma de mostrar estos datos.
+    </p>
+    <div id="example1" class="example">Hola Juan Carlos
+      <div id="example2" class="example">como estas
+        <div id="example3" class="example">todo bien?</div>
+      </div>
+    </div>
+    <p id="id1" class="cla">Hola espiritu!!!</p>
+    <script>
+      const div_nivel3 = document.getElementById( 'example3' );
+      const div_nivel2 = div_nivel3.parentNode;
+      const div_nivel1 = div_nivel2.parentNode;
+
+      document.write("<br>Variable div_nivel3 guarda elemento = " + div_nivel3.id);
+      document.write("<br>Variable div_nivel2 guarda elemento padre de div_nivel3 = " + div_nivel2.id);
+      document.write("<br>Variable div_nivel1 guarda elemento padre de div_nivel2 = " + div_nivel1.id);
+    </script>
+  </body>
+</html>

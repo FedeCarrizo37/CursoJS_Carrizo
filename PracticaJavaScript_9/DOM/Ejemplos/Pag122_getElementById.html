@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>
+      Luego dentro de ejemplos crear un archivo con el nombre Pag122_getElementById.html
+      agregando el código necesario para poder visualizar el id, por otra parte buscar, a través de
+      la consola la forma de mostrar el contenido interno de div en cuestión.
+    </p>
+    <div id="exampleDiv">Hola Juan Carlos</div>
+    <script type="text/javascript">
+      const elem = document.getElementById( 'exampleDiv' );
+      document.write("<br>En la consola ver contenido");
+      console.log("Contenido del Elemento DOM => " + elem.innerHTML + " como estas...");
+    </script>
+  </body>
+</html>

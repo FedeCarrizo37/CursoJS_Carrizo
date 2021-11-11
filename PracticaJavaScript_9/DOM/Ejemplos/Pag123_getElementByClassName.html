@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>
+      Luego dentro de ejemplos crear un archivo con el nombre
+      Pag123_getElementByClassName.html agregando el código necesario para poder
+      visualizar los id y los nombres de las clases, buscando a través de la
+      consola la forma de mostrar estos datos.
+    </p>
+    <div id="example1" class="example">Hola Juan Carlos</div>
+    <div id="example2" class="example">como estas</div>
+    <div id="example3" class="example">todo bien?</div>
+    <script type="text/javascript">
+      const elems = document.getElementsByClassName( 'example' );
+      document.write("<br>Hay " + elems.length + " elementos DOM con ClassName = 'example'  ");
+      document.write("<br>Ver detalles en consola");
+      for (i = 0; i < elems.length; i++) {
+        console.log("*div => Id= " +  elems[i].id + " => Class= " + elems[i].className);
+      }
+    </script>
+  </body>
+</html>

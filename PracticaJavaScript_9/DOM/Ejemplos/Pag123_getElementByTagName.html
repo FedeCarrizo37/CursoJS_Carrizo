@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="iso-8859-1">
+    <title>DOM</title>
+    <script src="" type="text/javascript"></script>
+  </head>
+  <body>
+    <p>
+      Luego dentro de ejemplos crear un archivo con el nombre
+      Pag123_getElementByTagName.html agregando el código necesario para poder visualizar
+      los id, buscando a través de la consola la forma de mostrar estos datos.
+    </p>
+
+    <div id="exampleDiv1">Hola Juan Carlos</div>
+    <div id="exampleDiv2">como estas</div>
+    <div id="exampleDiv3">todo bien?</div>
+    <script type="text/javascript">
+      const elems = document.getElementsByTagName( 'div' );
+      document.write("<br>Elementos div encontrados= " + elems.length);
+      document.write("<br>Ver los ID en Consola");
+      for (i = 0; i < elems.length; i++) {
+        console.log("<br>" +  elems[i] + "=> Id= " + elems[i].id);
+      }
+    </script>
+  </body>
+</html>
